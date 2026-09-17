@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Page Title -->
+  <title>VISWA S | Internet of Things (IoT) Student | ECE</title>
+  <meta name="description" content="Portfolio of VISWA S, an Electronics and Communication Engineering student at Coimbatore Institute of Engineering and Technology (2024 – 2028), CGPA: 8 (Till Semester IV). Strong foundation in Internet of Things (IoT), Embedded Systems, and Embedded C.">
+  <meta name="keywords" content="VISWA S, Internet of Things, IoT Student, Embedded C, CIET, ECE, Arduino, ESP32, Coimbatore, Smart Home Automation, Smart Attendance">
+  <meta name="author" content="VISWA S">
+  <link rel="canonical" href="https://viswasciet-svg.github.io/portfolio/">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VISWA S | Internet of Things (IoT) Student | ECE">
+  <meta property="og:description" content="Portfolio of VISWA S - Electronics and Communication Engineering Student (2024 – 2028) at CIET specializing in Internet of Things (IoT) and Embedded C.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta property="og:url" content="https://viswasciet-svg.github.io/portfolio/">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VISWA S | Internet of Things (IoT) Student | ECE">
+  <meta name="twitter:description" content="Portfolio of VISWA S - Electronics and Communication Engineering Student (2024 – 2028) at CIET specializing in Internet of Things (IoT) and Embedded C.">
+  <meta name="twitter:image" content="assets/images/profile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#070a13">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "VISWA S",
+    "jobTitle": "Internet of Things (IoT) Student",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "COIMBATORE INSTITUTE OF ENGINEERING AND TECHNOLOGY"
+    },
+    "description": "Aspiring Electronics and Communication Engineering student with a strong foundation in Internet of Things (IoT), embedded systems, programming, and sensor-based technologies.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Coimbatore",
+      "addressCountry": "India"
+    },
+    "email": "viswa.s.ciet@gamil.com",
+    "telephone": "+918524807757",
+    "sameAs": [
+      "https://github.com/viswasciet-svg",
+      "https://leetcode.com/problemset"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       INITIAL CIRCUIT LOADING SCREEN
+       ========================================================================== -->
+  <div id="loadingScreen" class="loading-screen" aria-hidden="true">
+    <div class="loader-circuit">
+      <div class="loader-ring"></div>
+      <div class="loader-core"></div>
+    </div>
+    <div class="loader-text">Initializing IoT Nodes...</div>
+  </div>
+
+  <!-- ==========================================================================
+       BACKGROUND INTERACTIVE PCB CANVAS
+       ========================================================================== -->
+  <canvas id="pcbCanvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
+       STICKY RESPONSIVE NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="nav-brand" aria-label="VISWA S Portfolio Home">
+        <span class="brand-icon"><i class="fas fa-microchip"></i></span>
+        <span>VISWA S</span>
+        <span class="brand-accent">IoT &amp; ECE</span>
+      </a>
+
+      <!-- Desktop & Mobile Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Items: Theme Switcher & Resume Buttons -->
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <a href="assets/resume/Viswa_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" aria-label="View Resume PDF">
+          <i class="fas fa-eye"></i>
+          <span>View</span>
+        </a>
+
+        <a href="assets/resume/Viswa_Resume.pdf" download="Viswa_Resume.pdf" class="btn btn-outline btn-sm" aria-label="Download Resume PDF">
+          <i class="fas fa-download"></i>
+          <span>Resume</span>
+        </a>
+
+        <button id="navHamburgerBtn" class="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="home" class="hero-section" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Column -->
+          <div class="hero-text-col">
+            <div class="hero-badge-container">
+              <span class="hero-status-pill">
+                <span class="status-pulse-dot"></span>
+                Open for IoT &amp; Embedded Opportunities
+              </span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-gradient">VISWA S</span>
+            </h1>
+
+            <div class="hero-typing-wrap" aria-label="Specialization">
+              <span id="typingText">Internet of Things (IoT) Student</span><span class="typing-cursor"></span>
+            </div>
+
+            <div class="hero-subtitle">
+              <span>Internet of Things (IoT) Student</span> <span class="hero-sub-sep">|</span> <span>ECE (2024 – 2028)</span>
+            </div>
+
+            <p class="hero-bio">
+              "Aspiring Electronics and Communication Engineering student with a strong foundation in Internet of Things (IoT), embedded systems, programming, and sensor-based technologies. Skilled in developing IoT applications using microcontrollers, sensors, and communication protocols to solve real-world problems through smart and connected systems."
+            </p>
+
+            <div class="hero-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Coimbatore, India</span>
+              <span style="opacity: 0.4; margin-inline: 0.4rem;">|</span>
+              <i class="fas fa-graduation-cap"></i>
+              <span>CIET • 2024 – 2028</span>
+            </div>
+
+            <div class="hero-cta-group">
+              <a href="assets/resume/Viswa_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="viewResumeHeroBtn">
+                <i class="fas fa-eye"></i>
+                <span>View Resume</span>
+              </a>
+              <a href="assets/resume/Viswa_Resume.pdf" download="Viswa_Resume.pdf" class="btn btn-secondary" id="downloadResumeHeroBtn">
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+              </a>
+              <a href="#projects" class="btn btn-outline">
+                <i class="fas fa-project-diagram"></i>
+                <span>View My Projects</span>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fas fa-envelope"></i>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <!-- Recruiter Quick Summary Specs -->
+            <div class="hero-quick-specs">
+              <div class="spec-item">
+                <span class="spec-label">Domain Focus</span>
+                <span class="spec-value" style="color: var(--pcb-green);">IoT &amp; Embedded C</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Academic Standing</span>
+                <span class="spec-value">CGPA: 8 (Till Sem IV)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">College Period</span>
+                <span class="spec-value" style="color: var(--pcb-cyan);">2024 – 2028</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Profile Visual Column -->
+          <div class="hero-avatar-wrapper">
+            <div class="avatar-circuit-frame">
+              <!-- Concentric PCB decorative traces & test vias -->
+              <span class="pcb-trace-ring" aria-hidden="true"></span>
+              <span class="pcb-via via-tl" aria-hidden="true" title="Test Point 1"></span>
+              <span class="pcb-via via-tr" aria-hidden="true" title="Test Point 2"></span>
+              <span class="pcb-via via-bl" aria-hidden="true" title="Test Point 3"></span>
+              <span class="pcb-via via-br" aria-hidden="true" title="Test Point 4"></span>
+
+              <div class="avatar-img-container">
+                <img 
+                  src="assets/images/profile.jpg" 
+                  alt="VISWA S - Internet of Things (IoT) Student" 
+                  class="avatar-img"
+                  width="320"
+                  height="320"
+                  loading="eager"
+                  fetchpriority="high">
+              </div>
+            </div>
+
+            <!-- Decorative Hardware Chips -->
+            <div class="floating-chip chip-1" aria-hidden="true">
+              <i class="fas fa-microchip" style="color: var(--pcb-green);"></i>
+              <span>Arduino &amp; ESP32</span>
+            </div>
+            <div class="floating-chip chip-2" aria-hidden="true">
+              <i class="fas fa-wifi" style="color: var(--pcb-cyan);"></i>
+              <span>Embedded C &amp; IoT</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CAREER PROFILE & OBJECTIVE SECTION
+         ========================================================================== -->
+    <section id="career-profile" class="section" aria-label="Career Profile and Goal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-compass"></i> Vision &amp; Identity</span>
+          <h2 class="section-title">IoT &amp; Embedded Systems <span class="text-gradient">Engineering Focus</span></h2>
+          <p class="section-description">
+            Combining microcontroller programming, sensor networks, and connected cloud dashboards to solve real-world problems.
+          </p>
+        </div>
+
+        <div class="career-identity-grid">
+          <!-- Identity Card -->
+          <div class="pcb-card identity-card">
+            <span class="ic-corner ic-corner-tl"></span>
+            <span class="ic-corner ic-corner-tr"></span>
+            <span class="ic-corner ic-corner-bl"></span>
+            <span class="ic-corner ic-corner-br"></span>
+            <div>
+              <div class="identity-card-header">
+                <span class="badge badge-green">Core Professional Focus</span>
+                <h3 style="font-size: 1.45rem; margin-top: 0.5rem; color: var(--text-primary);">
+                  Electronics + IoT + Embedded C + Connected Systems
+                </h3>
+              </div>
+              <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                Aspiring Electronics and Communication Engineering student with a strong foundation in Internet of Things (IoT), embedded systems, programming, and sensor-based technologies. Skilled in developing IoT applications using microcontrollers, sensors, and communication protocols to solve real-world problems through smart and connected systems.
+              </p>
+            </div>
+
+            <div class="identity-tech-matrix">
+              <div class="matrix-item">
+                <i class="fas fa-microchip"></i>
+                <span>Embedded C Programming</span>
+              </div>
+              <div class="matrix-item">
+                <i class="fas fa-wifi"></i>
+                <span>Basics of Internet of Things (IoT)</span>
+              </div>
+              <div class="matrix-item">
+                <i class="fas fa-robot"></i>
+                <span>Microcontrollers (Arduino, ESP32)</span>
+              </div>
+              <div class="matrix-item">
+                <i class="fas fa-cloud"></i>
+                <span>Cloud &amp; Web Dashboards</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Goal Card -->
+          <div class="pcb-card goal-card">
+            <span class="ic-corner ic-corner-tl"></span>
+            <span class="ic-corner ic-corner-tr"></span>
+            <span class="ic-corner ic-corner-bl"></span>
+            <span class="ic-corner ic-corner-br"></span>
+            <div>
+              <span class="badge badge-copper" style="margin-bottom: 1rem;">Career Objective</span>
+              <blockquote class="goal-quote">
+                "To develop practical IoT and embedded solutions using microcontrollers, sensors, and communication protocols to solve real-world problems through smart and connected systems."
+              </blockquote>
+            </div>
+
+            <div class="goal-pillars">
+              <div class="pillar-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Developing real-time microcontroller firmware in Embedded C</span>
+              </div>
+              <div class="pillar-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Designing smart connected IoT systems with sensor telemetry</span>
+              </div>
+              <div class="pillar-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Building end-to-end cloud and web-enabled hardware prototypes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section id="about" class="section" aria-label="About VISWA S">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-user-circle"></i> Profile</span>
+          <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+          <p class="section-description">
+            Dedicated Electronics and Communication Engineering student passionate about IoT and Embedded Systems.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- About Profile Visual Column -->
+          <div class="about-visual-col">
+            <div class="pcb-card about-profile-card">
+              <span class="ic-corner ic-corner-tl"></span>
+              <span class="ic-corner ic-corner-tr"></span>
+              <span class="ic-corner ic-corner-bl"></span>
+              <span class="ic-corner ic-corner-br"></span>
+
+              <div class="about-avatar-frame">
+                <span class="about-trace-ring" aria-hidden="true"></span>
+                <span class="about-via via-top" aria-hidden="true"></span>
+                <span class="about-via via-bottom" aria-hidden="true"></span>
+                <div class="about-img-container">
+                  <img 
+                    src="assets/images/profile.jpg" 
+                    alt="VISWA S - Internet of Things (IoT) Student" 
+                    class="about-avatar-img"
+                    width="220"
+                    height="220"
+                    loading="lazy">
+                </div>
+              </div>
+
+              <div class="about-profile-info">
+                <h3 class="about-profile-name">VISWA S</h3>
+                <p class="about-profile-role">Internet of Things (IoT) Student</p>
+                <div class="about-profile-tag">
+                  <span class="status-pulse-dot"></span>
+                  <span>CIET • 2024 – 2028</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Text & Highlights Column -->
+          <div class="about-content-col">
+            <div class="about-text">
+              <p>
+                Aspiring Electronics and Communication Engineering student with a strong foundation in Internet of Things (IoT), embedded systems, programming, and sensor-based technologies. Skilled in developing IoT applications using microcontrollers, sensors, and communication protocols to solve real-world problems through smart and connected systems.
+              </p>
+              <p>
+                My key technical focus areas include <strong>Embedded C Programming</strong> and <strong>IoT Things</strong>. I have successfully engineered projects ranging from mobile-controlled home automation to cloud-based RFID attendance tracking and energy-efficient automated street light systems.
+              </p>
+              <p>
+                I take pride in writing efficient microcontroller firmware, utilizing tools like Arduino IDE, VS Code, Git, GitHub, Claude, and Cursor AI, and continuous problem solving in C and Python.
+              </p>
+
+              <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="assets/resume/Viswa_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fas fa-eye"></i> View Resume
+                </a>
+                <a href="assets/resume/Viswa_Resume.pdf" download="Viswa_Resume.pdf" class="btn btn-secondary btn-sm">
+                  <i class="fas fa-download"></i> Download Resume
+                </a>
+                <a href="#contact" class="btn btn-outline btn-sm">
+                  <i class="fas fa-paper-plane"></i> Let's Discuss Opportunities
+                </a>
+              </div>
+            </div>
+
+            <div class="about-highlights">
+              <div class="about-stat-card">
+                <span class="stat-num">8</span>
+                <span class="stat-label">CGPA (Till Semester IV)</span>
+              </div>
+              <div class="about-stat-card">
+                <span class="stat-num">2024–2028</span>
+                <span class="stat-label">B.E ECE College Period</span>
+              </div>
+              <div class="about-stat-card">
+                <span class="stat-num">90%</span>
+                <span class="stat-label">HSC &amp; SSLC Board Marks</span>
+              </div>
+              <div class="about-stat-card">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Verified IoT &amp; Embedded Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION SECTION
+         ========================================================================== -->
+    <section id="education" class="section" aria-label="Education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academic Pathway</span>
+          <h2 class="section-title">Formal <span class="text-gradient">Education</span></h2>
+          <p class="section-description">
+            Academic pathway in Electronics and Communication Engineering at Coimbatore Institute of Engineering and Technology.
+          </p>
+        </div>
+
+        <div class="education-timeline-wrap">
+          <!-- College Card -->
+          <div class="pcb-card education-card">
+            <span class="ic-corner ic-corner-tl"></span>
+            <span class="ic-corner ic-corner-tr"></span>
+            <span class="ic-corner ic-corner-bl"></span>
+            <span class="ic-corner ic-corner-br"></span>
+            
+            <div class="education-card-top">
+              <div>
+                <h3 class="edu-degree">B.E Electronics and Communication Engineering</h3>
+                <div class="edu-dept">Department of Electronics and Communication Engineering (ECE)</div>
+              </div>
+              <div class="edu-cgpa-badge">
+                <i class="fas fa-award"></i>
+                <span>CGPA: 8 (Till Semester IV)</span>
+              </div>
+            </div>
+
+            <div class="edu-institution">
+              <i class="fas fa-university"></i>
+              <span>COIMBATORE INSTITUTE OF ENGINEERING AND TECHNOLOGY</span>
+            </div>
+
+            <div class="edu-meta-badges">
+              <span class="badge badge-copper"><i class="fas fa-calendar-alt"></i> Period: 2024 – 2028</span>
+              <span class="badge badge-cyan"><i class="fas fa-map-marker-alt"></i> Coimbatore, Tamil Nadu</span>
+            </div>
+
+            <ul class="edu-list">
+              <li>Pursuing Bachelor of Engineering in Electronics and Communication Engineering for the period <strong>2024 – 2028</strong>.</li>
+              <li>Consistently maintained an academic standing of <strong>CGPA: 8 (Till Semester IV)</strong>.</li>
+              <li>Hands-on laboratory training in microcontrollers, sensor interfacing, Embedded C programming, and IoT connected systems.</li>
+            </ul>
+          </div>
+
+          <!-- Schooling Cards Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem;">
+            <!-- HSC Card -->
+            <div class="pcb-card" style="padding: 1.5rem;">
+              <span class="ic-corner ic-corner-tl"></span>
+              <span class="ic-corner ic-corner-tr"></span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">Higher Secondary Certificate (HSC)</h4>
+                  <div style="font-size: 0.85rem; color: var(--pcb-green);">Sri Venkateshwara Matric Higher Secondary School</div>
+                </div>
+                <span class="badge badge-green" style="font-size: 0.95rem; font-weight: 700;">90%</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                Completed Higher Secondary School certificate examination with an outstanding score of 90%.
+              </p>
+            </div>
+
+            <!-- SSLC Card -->
+            <div class="pcb-card" style="padding: 1.5rem;">
+              <span class="ic-corner ic-corner-tl"></span>
+              <span class="ic-corner ic-corner-tr"></span>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">Secondary School Leaving Certificate (SSLC)</h4>
+                  <div style="font-size: 0.85rem; color: var(--pcb-cyan);">Sri Venkateshwara Matric Higher Secondary School</div>
+                </div>
+                <span class="badge badge-cyan" style="font-size: 0.95rem; font-weight: 700;">90%</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                Completed Secondary School Leaving certificate examination with an outstanding score of 90%.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION (CATEGORIZED INTERACTIVE CARDS)
+         ========================================================================== -->
+    <section id="skills" class="section" aria-label="Technical Skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-cogs"></i> Technical Proficiency</span>
+          <h2 class="section-title">Verified <span class="text-gradient">Skills</span></h2>
+          <p class="section-description">
+            Transparent and verified technical competencies derived strictly from the official resume.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-tabs" id="skillsTabsContainer">
+          <!-- Injected via js/script.js -->
+        </div>
+
+        <!-- Skills Cards Grid -->
+        <div class="skills-grid" id="skillsGridContainer">
+          <!-- Injected via js/script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SHOWCASE SECTION
+         ========================================================================== -->
+    <section id="projects" class="section" aria-label="Projects Showcase">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-laptop-code"></i> Engineering Portfolio</span>
+          <h2 class="section-title">Verified <span class="text-gradient">Projects</span></h2>
+          <p class="section-description">
+            Practical hardware and software systems engineered using Embedded C, microcontrollers, and IoT protocols.
+          </p>
+        </div>
+
+        <div class="projects-grid" id="projectsGridContainer">
+          <!-- Injected via js/script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATIONS & AREA OF INTEREST
+         ========================================================================== -->
+    <section id="certifications" class="section" aria-label="Certifications and Area of Interest">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-certificate"></i> Verified Credentials</span>
+          <h2 class="section-title">Certifications &amp; <span class="text-gradient">Area of Interest</span></h2>
+          <p class="section-description">
+            Official certifications and core domain focus areas from the resume.
+          </p>
+        </div>
+
+        <div class="cert-section-grid">
+          <!-- Formal Certifications Column -->
+          <div>
+            <h3 class="cert-column-title">
+              <i class="fas fa-medal" style="color: var(--pcb-green);"></i>
+              <span>Accredited Certification</span>
+            </h3>
+            <div class="cert-cards-list" id="certificationsListContainer">
+              <!-- Injected via js/script.js -->
+            </div>
+          </div>
+
+          <!-- Area of Interest Column -->
+          <div>
+            <h3 class="cert-column-title">
+              <i class="fas fa-compass" style="color: var(--pcb-cyan);"></i>
+              <span>Area of Interest</span>
+            </h3>
+            <div class="cert-cards-list" id="currentlyLearningContainer">
+              <!-- Injected via js/script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERNSHIP / EXPERIENCE SECTION
+         ========================================================================== -->
+    <section id="experience" class="section" aria-label="Internship and Industry Experience">
+      <div class="container">
+        <div class="experience-banner pcb-card">
+          <span class="ic-corner ic-corner-tl"></span>
+          <span class="ic-corner ic-corner-tr"></span>
+          <span class="ic-corner ic-corner-bl"></span>
+          <span class="ic-corner ic-corner-br"></span>
+
+          <div class="exp-banner-grid">
+            <div>
+              <div class="exp-status-tag">
+                <i class="fas fa-briefcase"></i> Professional Experience
+              </div>
+              <h2 class="exp-title">EMBEDDED SYSTEMS &amp; IoT (Internship)</h2>
+              <p class="exp-desc">
+                Hands-on professional experience focused on Embedded Systems and Internet of Things (IoT) technologies.
+              </p>
+              
+              <div style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600; color: var(--text-primary);">
+                Key Competencies:
+              </div>
+              <div class="exp-roles-list">
+                <span class="badge badge-green">Embedded Systems</span>
+                <span class="badge badge-cyan">Internet of Things (IoT)</span>
+                <span class="badge badge-copper">Embedded C</span>
+                <span class="badge">Sensor Interfacing</span>
+              </div>
+            </div>
+
+            <div class="exp-cta-card">
+              <div class="exp-cta-meta">
+                <div><i class="fas fa-briefcase"></i><span><strong>Role:</strong> Embedded Systems &amp; IoT Intern</span></div>
+                <div><i class="fas fa-graduation-cap"></i><span><strong>Education:</strong> CIET • 2024 – 2028</span></div>
+                <div><i class="fas fa-award"></i><span><strong>Standing:</strong> CGPA: 8 (Till Semester IV)</span></div>
+              </div>
+              <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Contact Viswa
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACHIEVEMENTS SECTION
+         ========================================================================== -->
+    <section id="achievements" class="section" aria-label="Achievements">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-trophy"></i> Milestones</span>
+          <h2 class="section-title">Key <span class="text-gradient">Achievements</span></h2>
+          <p class="section-description">
+            Academic consistency, verified project builds, and foundational excellence.
+          </p>
+        </div>
+
+        <div class="achievements-grid" id="achievementsGridContainer">
+          <!-- Injected via js/script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION & CONTACT FORM
+         ========================================================================== -->
+    <section id="contact" class="section" aria-label="Contact Information and Form">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+          <p class="section-description">
+            Interested in discussing IoT and Embedded Systems opportunities, projects, or collaboration? Reach out directly.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Details Column -->
+          <div class="contact-info-col">
+            <div class="contact-card-item">
+              <div class="contact-icon-wrap"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="contact-detail-label">Direct Email</div>
+                <a href="mailto:viswa.s.ciet@gamil.com" class="contact-detail-value">viswa.s.ciet@gamil.com</a>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-icon-wrap"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <div class="contact-detail-label">Phone / WhatsApp</div>
+                <a href="tel:+918524807757" class="contact-detail-value">+91 8524807757</a>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div class="contact-detail-label">Location</div>
+                <div class="contact-detail-value">Coimbatore, Tamil Nadu, India</div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div style="margin-top: 1rem;">
+              <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary);">
+                Professional Profiles:
+              </div>
+              <div class="social-links-row">
+                <a href="https://github.com/viswasciet-svg" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://leetcode.com/problemset" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LeetCode Profile">
+                  <i class="fas fa-code"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="pcb-card">
+            <span class="ic-corner ic-corner-tl"></span>
+            <span class="ic-corner ic-corner-tr"></span>
+            <span class="ic-corner ic-corner-bl"></span>
+            <span class="ic-corner ic-corner-br"></span>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contactName" class="form-label">
+                  <span>Your Name</span>
+                  <span class="form-label-req">*</span>
+                </label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Alex Carter" required>
+                <span class="form-field-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">
+                  <span>Email Address</span>
+                  <span class="form-label-req">*</span>
+                </label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. alex@example.com" required>
+                <span class="form-field-error">Please provide a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">
+                  <span>Subject</span>
+                  <span class="form-label-req">*</span>
+                </label>
+                <input type="text" id="contactSubject" class="form-input" placeholder="e.g. IoT & Embedded Systems Opportunity" required>
+                <span class="form-field-error">Subject must be at least 3 characters.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">
+                  <span>Message</span>
+                  <span class="form-label-req">*</span>
+                </label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Hello Viswa, I reviewed your IoT and embedded projects..." required></textarea>
+                <span class="form-field-error">Message must contain at least 10 characters.</span>
+              </div>
+
+              <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+
+              <div class="form-note">
+                <i class="fas fa-shield-alt"></i> Responsive client validation enabled.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="#home" class="nav-brand">
+            <span class="brand-icon"><i class="fas fa-microchip"></i></span>
+            <span>VISWA S</span>
+          </a>
+          <p class="footer-bio">
+            Internet of Things (IoT) Student | ECE (2024 – 2028), CIET.<br>
+            Aspiring Electronics and Communication Engineering student with a strong foundation in Internet of Things (IoT), embedded systems, and sensor-based technologies.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education (2024 – 2028)</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigation &amp; Resume</h4>
+          <ul class="footer-nav">
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#experience">Internship Experience</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="assets/resume/Viswa_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a></li>
+            <li><a href="assets/resume/Viswa_Resume.pdf" download="Viswa_Resume.pdf">Download Resume</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <div class="social-links-row">
+            <a href="https://github.com/viswasciet-svg" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://leetcode.com/problemset" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LeetCode Profile">
+              <i class="fas fa-code"></i>
+            </a>
+          </div>
+          <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            <i class="fas fa-envelope"></i> viswa.s.ciet@gamil.com
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 VISWA S. All rights reserved.
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--pcb-green);">
+          Electronics &amp; Communication Engineering (2024 – 2028)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING AI CHATBOT WIDGET ("Viswa AI Assistant")
+       ========================================================================== -->
+  <div class="chatbot-widget-container">
+    <button id="chatbotToggleBtn" class="chatbot-toggle-btn" aria-label="Open Viswa AI Assistant Chat" aria-haspopup="dialog">
+      <span class="chatbot-pulse-ring"></span>
+      <i class="fas fa-robot"></i>
+    </button>
+
+    <div id="chatbotDialog" class="chatbot-dialog" role="dialog" aria-label="Viswa AI Assistant" aria-hidden="true">
+      <div class="chatbot-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar-icon"><i class="fas fa-microchip"></i></div>
+          <div>
+            <div class="chat-title">Viswa AI Assistant</div>
+            <div class="chat-subtitle"><span class="status-pulse-dot" style="width: 6px; height: 6px;"></span> Local Knowledge Engine</div>
+          </div>
+        </div>
+        <button id="chatCloseBtn" class="chat-close-btn" aria-label="Close chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div id="chatbotMessages" class="chatbot-messages-body">
+        <div class="chat-msg chat-msg-bot">
+          <div class="chat-msg-bubble">
+            Hello! I am the <strong>Viswa AI Assistant</strong>. I can answer questions regarding VISWA S's education (CIET, 2024 – 2028, CGPA: 8 Till Sem IV), IoT &amp; Embedded C skills, projects, certifications, or internship. Ask me anything or select a prompt below!
+          </div>
+        </div>
+      </div>
+
+      <!-- Prompt Chips Container -->
+      <div id="chatChipsContainer" class="chat-chips-container">
+        <!-- Injected via js/chatbot.js -->
+      </div>
+
+      <div class="chatbot-input-footer">
+        <form id="chatbotForm" class="chatbot-form">
+          <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask about Viswa's skills, projects..." autocomplete="off">
+          <button type="submit" class="chatbot-send-btn" aria-label="Send message">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ==========================================================================
+       PROJECT DETAIL MODAL
+       ========================================================================== -->
+  <div id="projectModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close project modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="projectModalBody">
+        <!-- Injected dynamically on click -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

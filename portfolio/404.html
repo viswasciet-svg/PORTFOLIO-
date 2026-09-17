@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | S. Viswa Portfolio</title>
+  <meta name="description" content="Looks like this circuit connection doesn't exist. Return to S. Viswa's personal portfolio.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .circuit-broken-box {
+      width: 140px;
+      height: 140px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-tertiary);
+      border: 2px dashed #ef4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ef4444;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+      position: relative;
+    }
+
+    .broken-spark {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      color: var(--pcb-copper);
+      font-size: 1.5rem;
+      animation: sparkBlink 1.5s infinite alternate;
+    }
+
+    @keyframes sparkBlink {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 800;
+      color: var(--pcb-green);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 25px var(--pcb-green-glow);
+    }
+
+    .error-subtitle {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .error-message {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="pcbCanvas" aria-hidden="true"></canvas>
+
+  <div class="error-container">
+    <div class="circuit-broken-box">
+      <i class="fas fa-unlink"></i>
+      <i class="fas fa-bolt broken-spark"></i>
+    </div>
+
+    <div class="error-code">404</div>
+    <h1 class="error-subtitle">Page Not Found</h1>
+    <p class="error-message">
+      "Looks like this circuit connection doesn't exist."
+    </p>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+      <a href="index.html#contact" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> Contact Viswa
+      </a>
+    </div>
+  </div>
+
+  <script src="js/animations.js"></script>
+</body>
+</html>
